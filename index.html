@@ -1,84 +1,0 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TorChat — Dark</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div id="app">
-    <!-- Login Screen -->
-    <div id="login" class="card center">
-      <img src="assets/icon.png" alt="TorChat" class="logo" />
-      <h1>TorChat</h1>
-      <input id="username" placeholder="أدخل اسم المستخدم" autocomplete="off" />
-      <div class="row">
-        <button id="btnRegister" class="btn primary">دخول</button>
-        <button id="btnGuest" class="btn ghost">تجربة</button>
-      </div>
-      <p id="status">جاهز</p>
-    </div>
-
-    <!-- Main App -->
-    <div id="main" class="hidden">
-      <header class="topbar">
-        <div class="left">
-          <img src="assets/icon.png" class="mini-logo" />
-          <div class="title">TorChat</div>
-        </div>
-        <div class="right">
-          <button id="btnSearch" class="icon">🔍</button>
-          <button id="btnSettings" class="icon">⚙️</button>
-        </div>
-      </header>
-
-      <div class="content">
-        <aside class="sidebar">
-          <div class="tabs">
-            <button class="tab active">الدردشات</button>
-            <button class="tab">الحالة</button>
-            <button class="tab">المكالمات</button>
-          </div>
-
-          <div class="searchbar">
-            <input id="searchInput" placeholder="ابحث عن دردشة أو مستخدم" />
-          </div>
-
-          <ul id="users" class="user-list"></ul>
-        </aside>
-
-        <section class="chat-area">
-          <div class="chat-header" id="chatHeader">
-            <div class="user-block">
-              <div class="avatar" id="chatAvatar"></div>
-              <div class="meta">
-                <div id="chatName">-- اختر محادثة --</div>
-                <div id="chatStatus" class="muted">متصل</div>
-              </div>
-            </div>
-            <div class="chat-actions">
-              <button class="icon">📞</button>
-              <button class="icon">🎥</button>
-            </div>
-          </div>
-
-          <div id="messages" class="messages"></div>
-
-          <div class="composer">
-            <input id="messageInput" placeholder="اكتب رسالة" autocomplete="off" />
-            <button id="attach" class="icon">📎</button>
-            <button id="sendBtn" class="send">✈️</button>
-          </div>
-        </section>
-      </div>
-    </div>
-  </div>
-
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="app.js"></script>
-</body>
-</html>
